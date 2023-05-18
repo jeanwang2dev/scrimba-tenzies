@@ -17,11 +17,11 @@
 
 @layer components {
 
-    .dice-row {
-        @apply  pl-3 flex flex-wrap w-72 space-x-5;
+    .dice-container {
+        @apply p-2 w-72 grid grid-rows-2 grid-flow-col gap-4;
     }
 
     .dice {
-        @apply w-9 h-9 bg-slate-100 drop-shadow-lg rounded flex justify-center items-center;
+        @apply w-9 h-9 bg-white drop-shadow-lg rounded flex justify-center items-center  cursor-pointer;
     }
 }

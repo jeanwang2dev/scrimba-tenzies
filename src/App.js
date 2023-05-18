@@ -14,16 +14,14 @@ const App = () => {
                 <div className="w-80 h-80 bg-[#F5F5F5] rounded-lg flex flex-col space-y-3 justify-center items-center p-3">
                     <h1 className="font-bold">Tenzies</h1>
                     <p className="w-56 text-xs font-inter leading-tight text-center">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
-                    <div className="dice-row">
+                    <div className="dice-container">
+                        <Die number={1}></Die>
+                        <Die number={2}></Die>
+                        <Die number={3}></Die>
+                        <Die number={4}></Die>
                         <Die number={1}></Die>
                         <Die number={1}></Die>
-                        <Die number={1}></Die>
-                        <Die number={1}></Die>
-                        <Die number={1}></Die>
-                    </div>
-                    <div className="dice-row">
-                        <Die number={1}></Die>
-                        <Die number={1}></Die>
+                        <Die number={6}></Die>
                         <Die number={1}></Die>
                         <Die number={1}></Die>
                         <Die number={1}></Die>
