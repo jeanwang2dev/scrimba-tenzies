@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+@layer base {
+    * {
+        @apply box-border;
+    }
+    
+    body {
+       @apply font-karla m-0 bg-slate-300;
+    }
+    
+}
+
+@layer components {
+
+    .dice-row {
+        @apply  pl-3 flex flex-wrap w-72 space-x-5;
+    }
+
+    .dice {
+        @apply w-9 h-9 bg-slate-100 drop-shadow-lg rounded flex justify-center items-center;
+    }
+}
