@@ -26,3 +26,9 @@
  * of Die elements and render those in place of our
  * manually-written 10 Die elements.
  
+* Challenge: Update the array of numbers in state to be
+ * an array of objects instead. Each object should look like:
+ * { value: <random number>, isHeld: false }
+ * 
+ * Making this change will break parts of our code, so make
+ * sure to update things so we're back to a working state
