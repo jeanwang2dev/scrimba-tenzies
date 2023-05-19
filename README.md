@@ -86,3 +86,4 @@
   - track the numer of rolls
   - track the time it took to win
   - save your best time to localStorage
+  - reference work that others did [link](https://github.com/xdelmo/tenzies-game)

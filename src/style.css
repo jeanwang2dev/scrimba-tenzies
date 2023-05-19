@@ -18,10 +18,10 @@
 @layer components {
 
     .dice-container {
-        @apply p-2 w-72 grid grid-rows-2 grid-flow-col gap-4;
+        @apply p-2 w-fit grid grid-rows-2 grid-flow-col gap-4;
     }
 
-    .dice {
-        @apply w-9 h-9 bg-white drop-shadow-lg rounded flex justify-center items-center  cursor-pointer;
+    .die {
+        @apply w-16 h-16 bg-white drop-shadow-lg rounded-lg flex justify-center items-center  cursor-pointer;
     }
 }
