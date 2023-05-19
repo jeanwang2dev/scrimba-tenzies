@@ -78,3 +78,5 @@
   - 
   -    Hint: don't worry about the `height` and `width` props
   -    it mentions in the documentation.
+
+* Challenge: Allow the user to play a new game when the button is clicked and they've already won

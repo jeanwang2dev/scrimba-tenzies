@@ -10,7 +10,6 @@ const App = () => {
     const[dice, setDice] = useState(allNewDice)
     const[tenzies, setTenzies] = useState(false)
 
-
     useEffect( () => {
         const isAllDiceHeld = dice.every( die => die.isHeld ? true:false)
         const firstValue = dice[0].value;
@@ -43,12 +42,19 @@ const App = () => {
     }
 
     function rollDice() {
-        setDice(prevDice => prevDice.map( die => {
-            return !die.isHeld ? 
-                {...die, value: Math.ceil(Math.random()*6 )} :
-                die
+        if(tenzies) {
+            setTenzies(false)
+            setDice(allNewDice)
+        } else {
+            setDice(prevDice => prevDice.map( die => {
+                return !die.isHeld ? 
+                    {...die, value: Math.ceil(Math.random()*6 )} :
+                    die
+    
+            } ))
+        }
 
-        } ))
+
     }
 
     const diceElements = dice.map( die => 
