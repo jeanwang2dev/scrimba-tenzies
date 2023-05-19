@@ -82,8 +82,8 @@
 * Challenge: Allow the user to play a new game when the button is clicked and they've already won
 
 * Extra Credit
-  - put real dots on the dice with css
+  - ~~put real dots on the dice with css~~
   - track the numer of rolls
   - track the time it took to win
   - save your best time to localStorage
-  - reference work that others did [link](https://github.com/xdelmo/tenzies-game)
+  - reference work that others did [link](https://github.com/xdelmo/tenzies-game) 

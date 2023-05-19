@@ -9,6 +9,7 @@ const App = () => {
 
     const[dice, setDice] = useState(allNewDice)
     const[tenzies, setTenzies] = useState(false)
+    const[rolls, setRolls] = useState(0)
 
     useEffect( () => {
         const isAllDiceHeld = dice.every( die => die.isHeld ? true:false)
@@ -45,7 +46,9 @@ const App = () => {
         if(tenzies) {
             setTenzies(false)
             setDice(allNewDice)
+            setRolls(0)
         } else {
+            setRolls(prevRolls => prevRolls + 1)
             setDice(prevDice => prevDice.map( die => {
                 return !die.isHeld ? 
                     {...die, value: Math.ceil(Math.random()*6 )} :
@@ -74,6 +77,10 @@ const App = () => {
                 <div className="w-[500px] h-[500px] bg-[#F5F5F5] rounded-lg flex flex-col space-y-5 justify-center items-center p-3">
                     <h1 className="font-bold text-4xl">Tenzies</h1>
                     <p className="w-80 text-lg text-[#4A4E74] font-inter leading-tight text-center">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
+                    <div className="w-32 flex justify-around">
+                        <p>Rolls: <span className="font-bold">{rolls}</span></p>
+                        <p>Timer: </p>
+                    </div>
                     <div className="dice-container">
                         {diceElements}
                     </div>
