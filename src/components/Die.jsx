@@ -1,6 +1,9 @@
 function Die(props) {
     return (
-        <div className="dice">
+        <div 
+            className={`dice ${props.isHeld ? "bg-diceGreen" : ""}`}
+            onClick={props.holdDice}
+        >
             <span className="text-xl font-bold">{props.value}</span>
         </div>
     )

@@ -1,24 +1,58 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { nanoid } from 'nanoid'
+
 import Die from "./components/Die"
+
 
 const App = () => {
 
-    const[dices, setDices] = useState(allNewDice)
+    const[dice, setDice] = useState(allNewDice)
+    const[tenzies, setTenzies] = useState(false)
+
+
+    useEffect( () => {
+        console.log('Dice state changed')
+    }, [dice])    
 
     function allNewDice(){
         let newDiceArr = [];
         for(let i = 0; i< 10; i++){
-            newDiceArr.push( Math.ceil(Math.random()*6) )
+            newDiceArr.push( { 
+                value: Math.ceil(Math.random()*6), 
+                isHeld: false,
+                id: nanoid()
+            } )
         }
         
         return newDiceArr;
     }
 
-    function rollDice() {
-        setDices(allNewDice())
+    function holdDice(dieId) {
+        setDice(prevDice => prevDice.map( die => {
+            return die.id === dieId ?
+                 {...die, isHeld:!die.isHeld} :
+                 die
+        }))
     }
 
-    const diceElements = dices.map( die => <Die value={die} /> )
+    function rollDice() {
+        setDice(prevDice => prevDice.map( die => {
+            return !die.isHeld ? 
+                {...die, value: Math.ceil(Math.random()*6 )} :
+                die
+
+        } ))
+    }
+
+    const diceElements = dice.map( die => 
+        <Die 
+            key={die.id} 
+            value={die.value}    
+            isHeld={die.isHeld}
+            holdDice={() => holdDice(die.id)}         
+        /> 
+    )
+
 
     return (
         <div className="w-fit pt-8 mx-auto ">
