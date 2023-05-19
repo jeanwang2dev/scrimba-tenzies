@@ -11,7 +11,13 @@ const App = () => {
 
 
     useEffect( () => {
-        console.log('Dice state changed')
+        const isAllDiceHeld = dice.every( die => die.isHeld ? true:false)
+        const firstValue = dice[0].value;
+        const hasSameValue = dice.every( die => die.value === firstValue ? true:false)
+        if( isAllDiceHeld && hasSameValue){
+            setTenzies(true)
+            console.log('You won!')
+        }
     }, [dice])    
 
     function allNewDice(){
