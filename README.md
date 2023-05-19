@@ -1,4 +1,4 @@
-# A react project starter setup 
+# Scrimba Course Tenzies Preject
 
 ## with tailwindcss and webpack5
 
