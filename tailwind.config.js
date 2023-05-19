@@ -20,6 +20,9 @@ module.exports = {
         'karla': ['Karla', 'sans-serif'],
         'inter': ['Inter', 'sans-serif'],
       },
+      backgroundImage: {
+        'dieFaceOne': "url('dieFace1.png')",
+      }
     },
   },
   plugins: [],
