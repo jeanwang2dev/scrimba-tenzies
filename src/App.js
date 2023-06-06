@@ -80,7 +80,6 @@ const App = () => {
                     <p className="w-80 text-lg text-[#4A4E74] font-inter leading-tight text-center">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
                     <div className="w-32 flex justify-around">
                         <p>Rolls: <span className="font-bold">{rolls}</span></p>
-                        <p>Timer: </p>
                     </div>
                     <div className="dice-container">
                         {diceElements}
